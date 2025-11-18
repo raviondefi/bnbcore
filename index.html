@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BNB Core - 4% to 10% Daily</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- ✅ Oxanium Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #ffffff;
+      --dark-bg: #000;
+      --glow: #f6cb03;
+      --box-opacity: 0.78;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Oxanium', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      color: var(--gold);
+      overflow-x: hidden;
+      background: #000;
+      text-shadow: 0 0 5px rgba(246, 203, 3, 0.8);
+    }
+
+    /* 🔥 Video Background */
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    header.topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 40px;
+      background: rgba(0,0,0, var(--box-opacity));
+      border-bottom: 2px solid var(--glow);
+      box-shadow: 0 0 20px var(--glow);
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 28px;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, var(--glow), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 18px var(--glow);
+    }
+
+    .btn {
+      font-weight: 700;
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 22px;
+      cursor: pointer;
+      background: linear-gradient(90deg, var(--glow), #fff);
+      box-shadow: 0 0 20px var(--glow);
+      text-transform: uppercase;
+      font-family: 'Oxanium', sans-serif;
+    }
+
+    main.center {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .center-card {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(0,0,0,var(--box-opacity));
+      border: 2px solid var(--glow);
+      border-radius: 22px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 0 40px var(--glow);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 140px;
+      margin: 0 auto 30px;
+      display: block;
+      filter: drop-shadow(0 0 25px var(--glow));
+      animation: firePulse 2s infinite alternate;
+    }
+
+    @keyframes firePulse {
+      0% { filter: drop-shadow(0 0 10px var(--glow)); }
+      100% { filter: drop-shadow(0 0 35px var(--glow)); }
+    }
+
+    /* Plans */
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .plan-box {
+      background: rgba(0, 0, 0, var(--box-opacity));
+      border: 1px solid var(--glow);
+      border-radius: 15px;
+      box-shadow: 0 0 25px var(--glow);
+      padding: 25px 30px;
+      width: 280px;
+      text-align: center;
+    }
+
+    .plan-box h3 {
+      font-weight: 700;
+      font-size: 17px;
+      text-shadow: 0 0 10px var(--glow);
+      font-family: 'Oxanium', sans-serif;
+    }
+
+    .highlight-text {
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--glow);
+      font-weight: bold;
+    }
+
+    /* Inner Box Sections */
+    .inner-box {
+      background: rgba(0,0,0,var(--box-opacity));
+      border: 1px solid var(--glow);
+      border-radius: 15px;
+      box-shadow: 0 0 20px var(--glow);
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--glow);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      text-align: center;
+      font-family: 'Oxanium', sans-serif;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links img {
+      width: 38px;
+      filter: drop-shadow(0 0 6px var(--glow));
+      transition: 0.3s;
+    }
+
+    .footer-links img:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 15px var(--glow));
+    }
+
+    @media (max-width: 600px) {
+      .plans { flex-direction: column; align-items: center; }
+      .center-card { padding: 25px 15px; }
+      input { width: 100%; }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body>
+  <!-- 🔥 MP4 Background Video -->
+  <video autoplay muted loop id="video-bg">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <header class="topbar">
+    <div class="brand">BNBCore</div>
+    <button id="connectBtn" class="btn">Connect Wallet</button>
+  </header>
+
+  <main class="center">
+    <div class="center-card">
+      <!-- Logo on top -->
+      <img src="logo.png" class="logo" alt="Logo" />
+
+      <!-- Plans -->
+      <section class="plans">
+        <div class="plan-box">
+          <h3>Starter Plan</h3>
+          <h3>
+            Earn <span class="highlight-text">4% Daily</span><br>
+            <b>0.001 BNB – 1.99 BNB</b><br>
+            Duration: <b>50 Days</b><br>
+            Total Return: <b>200%</b>
+          </h3>
+        </div>
+
+        <div class="plan-box">
+          <h3>Pro Plan</h3>
+          <h3>
+            Earn <span class="highlight-text">10% Daily</span><br>
+            <b>2 BNB – 999 BNB</b><br>
+            Duration: <b>12 Days</b><br>
+            Total Return: <b>120%</b>
+          </h3>
+        </div>
+      </section>
+
+      <!-- Contract & Wallet Balance Box -->
+      <div class="inner-box">
+       <!--   <div>Contract Balance: <span id="contractBalance" class="highlight-text">BNB</span></div> -->
+        <div>Not connected</div>
+        <div>Your Wallet Balance: <span id="balance" class="highlight-text">-- BNB</span></div>
+      </div>
+
+      <!-- Deposit Input Box -->
+      <div class="inner-box">
+        <input id="stakeAmount" type="number" min="0.001" placeholder="Enter Amount (BNB)">
+        <button id="stakeBtn" class="btn" style="margin-top:10px;">Stake</button>
+        <div style="margin-top:8px;">0.001 BNB Minimum</div>
+      </div>
+
+      <!-- Referral Box -->
+      <div class="inner-box">
+        <input id="refLink" readonly placeholder="Your referral link will appear here">
+        <button id="copyRef" class="btn" style="margin-top:10px;">Copy Referral Link</button>
+      </div>
+
+      <!-- Withdraw Box -->
+      <div class="inner-box">
+        <div>Withdrawable</div>
+        <div id="withdrawable" class="highlight-text">0 BNB</div>
+        <button id="withdrawBtn" class="btn" style="margin-top:10px;">Withdraw</button>
+      </div>
+
+      <!-- Dashboard Box -->
+      <div class="inner-box">
+        <h3>Dashboard</h3>
+        <div>Total Stake: <span id="totalDeposits" class="highlight-text">0 BNB</span></div>
+        <div>Total Withdrawn: <span id="totalWithdrawn" class="highlight-text">0 BNB</span></div>
+      </div>
+
+      <!-- Rewards Box -->
+      <div class="inner-box">
+        <h3>Your Rewards by Levels</h3>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li>Level 1 – 10%</li>
+          <li>Level 2 – 3%</li>
+          <li>Level 3 – 2%</li>
+          <li>Level 4 – 1.5%</li>
+          <li>Level 5 – 1.5%</li>
+          <li>Level 6 – 1.5%</li>
+          <li>Level 7 – 1%</li>
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-links">
+          <a href="https://t.me/bnbcoreofficial" target="_blank"><img src="1.svg" alt="Telegram"></a>
+      <!--     <a href="https://bscscan.com/address/0xf55557132D21c19282B74827e6cb046C5B8FB54c#code" target="_blank"><img src="bnb.png" alt="Contract"></a>  -->
+        </div>
+        <p>© 2025 BNBCORE · All rights reserved.</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="abi.js"></script>
+  <script src="app.js"></script>
+  <script src="history.js"></script>
+
+  <script>
+    document.getElementById("connectBtn").addEventListener("click", () => {
+      document.getElementById("connectBtn").style.display = "none";
+    });
+  </script>
+</body>
+</html>

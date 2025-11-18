@@ -1,0 +1,175 @@
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #000010, #000);
+  color: rgb(236, 236, 238);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  font-family: inherit;
+  color: #fff;
+  background: #000;
+  border-radius: 10px;
+}
+
+
+/* ✅ Make the Stake button wider than the input */
+#stakeAmount {
+  width: 40%;           /* smaller input */
+  padding: 10px;
+  text-align: center;
+  
+}  
+  #stakeBtn {
+  width: 60%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;        /* ✅ centers text horizontally */
+  display: flex;             /* ✅ centers text vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+}
+/* === PLAN BOXES (replaces stacked welcome-box) === */
+.plans {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.plan-box {
+  flex: 1 1 350px;
+  background: rgb(0, 0, 0);
+  border: 1px solid #f6cb03;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 0 25px #f6cb03;
+  text-align: center;
+  line-height: 1.6;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.plan-box h3 {
+  background: linear-gradient(90deg, #f6cb03, #f6cb03, #f6cb03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+/* Mobile responsive stack */
+@media (max-width: 768px) {
+  .plans {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+
+/* 🔥 LIVE TRANSACTION FEED STYLES */
+.live-transactions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.history-box {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 200, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 120, 0, 0.2);
+  padding: 15px;
+  color: #fff;
+  overflow: hidden; /* ensures text stays inside the box */
+}
+
+.history-box h3 {
+  text-align: center;
+  color: var(--gold);
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px var(--fire-red);
+  font-size: 18px;
+}
+
+.scroll-wrapper {
+  height: 160px; /* fixed visible window */
+  overflow: hidden;
+  position: relative;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  opacity: 0.9;
+}
+
+.history-item.deposit {
+  border-left: 4px solid #00ff88;
+  color: #aaffcc;
+}
+
+.history-item.withdraw {
+  border-left: 4px solid #ff4d4d;
+  color: #ffaaaa;
+}
+
+@keyframes scrollUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .history-box {
+    width: 95%;
+  }
+}
+
+
+.neon {
+  text-shadow: 0 0 5px rgb(242, 243, 2rgb(210, 228, 228) 0 0 10px rgb(240, 255, 255);
+}
+
+.border-glow {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #e2e7e7, #dee0e0, #e7eeee) border-box;
+  animation: glowBorder 2s linear infinite;
+}
+
+@keyframes glowBorder {
+  0% { box-shadow: 0 0 5px #feffff, 0 0 15px #cacbcc; }
+  50% { box-shadow: 0 0 20px #f9fcfc, 0 0 40px #cfd0d1; }
+  100% { box-shadow: 0 0 5px #ecf0f0, 0 0 15px #edf0f1; }
+}
